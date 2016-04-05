@@ -1,4 +1,4 @@
-package userModel;
+package iLearn;
 
 public class Controller {
 }
