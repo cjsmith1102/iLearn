@@ -1,0 +1,57 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.button:hover {
+    -fx-background-color: #31A2AC;
+}
+
+.button {
+    -fx-padding: 5 22 5 22;
+    -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: #2F2F28;
+ /*  -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif; */
+    -fx-font-size: 14pt;
+    -fx-text-fill: #d8d8d8;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+
+/* .button:focused {
+    -fx-border-color: white, white;
+    -fx-border-width: 5, 5;
+    -fx-border-style: solid, segments(1, 1);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+ */
+
+.label {
+
+}
+
+.text-field{
+    -fx-border-color: #1d1d1d;
+    -fx-background-color: #E4E3DB;
+}
+
+.titled-pane > .title
+{
+    -fx-background-color: #2F2F28;
+}
+
+.titled-pane > *.content
+{
+    -fx-background-color: #F0EFF0;
+}
+
+.titled-pane
+{
+-fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";
+-fx-text-fill: white;
+}
+
+
+
+.titled-pane > .title > .arrow-button .arrow
+{
+    -fx-background-color: white;
+}
