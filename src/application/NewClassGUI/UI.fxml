@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.*?>
+
+<BorderPane id="BorderPaneID" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="600.0" stylesheets="@style.CSS" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <SplitPane dividerPositions="0.24390243902439024" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="449.0" BorderPane.alignment="CENTER">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="272.0" prefWidth="113.0">
+               <children>
+                  <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="223.0" prefWidth="110.0">
+                     <children>
+
+                        <Label id="CourseTitleLabelID" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Title">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+
+                        <Label id="InstructorTitleID" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Instructor">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+
+                        <Label id="LocationLabelID" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Location">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+
+                        <Label id="TermLabelID" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Term">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+
+                        <Label id="StartTimeLabelID" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Start">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+
+                        <Label id="EndTimeLabelID" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="End">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="231.0" prefWidth="338.0">
+               <children>
+                  <VBox layoutX="-1.0" prefHeight="223.0" prefWidth="339.0">
+                     <children>
+
+                        <ComboBox id="CourseOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="457.0" promptText="Click to select course">
+                        <items>
+                           <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Programming Languages" />
+                              <String fx:value="Object Oriented Systems" />
+                              <String fx:value="Software Engineering" />
+                              <String fx:value="Data Structures" />
+                           </FXCollections>
+                        </items>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                     </ComboBox>
+
+                        <ComboBox id="InstructorOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select instructor">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Dr. John Smith" />
+                                 <String fx:value="Dr. Yong Wei" />
+                                 <String fx:value="Tamirat Abegaz" />
+                                 <String fx:value="Minyuan Yan" />
+                              </FXCollections>
+                           </items>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ComboBox>
+
+
+                        <ComboBox id="LocationOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select location">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Newton Oakes" />
+                                 <String fx:value="Barnes Hall" />
+                                 <String fx:value="Health and Science" />
+                                 <String fx:value="Mathematics" />
+                              </FXCollections>
+                           </items>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ComboBox>
+
+                        <ComboBox id="TermOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select term">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Summer" />
+                                 <String fx:value="Fall" />
+                                 <String fx:value="Spring" />
+                              </FXCollections>
+                           </items>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ComboBox>
+
+                        <ComboBox id="StartTimeOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select start time">
+                        <items>
+                           <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="8:00" />
+                              <String fx:value="9:30" />
+                              <String fx:value="10:45" />
+                           </FXCollections>
+                        </items>
+                        <VBox.margin>
+                           <Insets />
+                        </VBox.margin>
+                     </ComboBox>
+
+                        <ComboBox id="EndTimeOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select start time">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="9:15" />
+                                 <String fx:value="10:45" />
+                                 <String fx:value="12:00" />
+                              </FXCollections>
+                           </items>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ComboBox>
+
+
+
+
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </center>
+   <top>
+      <Label id="TitleLabelID" alignment="CENTER" prefHeight="57.0" prefWidth="607.0" text="Class Creation" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Bell MT Bold" size="34.0" />
+         </font>
+      </Label>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="93.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="SubmitButtonID" layoutX="118.0" layoutY="23.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Submit" AnchorPane.topAnchor="23.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button id="CancelButtonID" layoutX="349.0" layoutY="23.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Cancel" AnchorPane.topAnchor="23.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </bottom>
+   <right>
+      <AnchorPane prefHeight="212.0" prefWidth="147.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER_LEFT" layoutX="24.0" layoutY="22.0" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+               <children>
+                  <CheckBox id="MondayID" alignment="CENTER" mnemonicParsing="false" text="Monday" />
+                  <CheckBox id="TuesdayID" alignment="CENTER" mnemonicParsing="false" text="Tuesday" />
+                  <CheckBox id="WednesdayID" alignment="CENTER" mnemonicParsing="false" text="Wednesday" />
+                  <CheckBox id="ThursdayID" mnemonicParsing="false" text="Thursday" />
+                  <CheckBox id="FridayID" mnemonicParsing="false" text="Friday" />
+               </children>
+               <padding>
+                  <Insets bottom="25.0" />
+               </padding>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="50.0" />
+         </padding>
+      </AnchorPane>
+   </right>
+</BorderPane>

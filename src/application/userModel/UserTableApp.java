@@ -3,7 +3,7 @@ package application.userModel;
 /**
  * Created by cjsmith1102 on 4/5/2016.
  */
-import javafx.application.Application ;
+import javafx.application.Application;
 import javafx.scene.control.TableView ;
 import javafx.scene.control.TableColumn ;
 import javafx.scene.control.cell.PropertyValueFactory ;
@@ -11,27 +11,33 @@ import javafx.scene.layout.BorderPane ;
 import javafx.scene.Scene ;
 import javafx.stage.Stage ;
 
+import application.DBConnect;
+
 public class UserTableApp extends Application {
-    private UserDataAccessor dataAccessor ;
+    private DBConnect DBCon ;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        dataAccessor = new UserDataAccessor(driverName, dbURL, user, password); // provide driverName, dbURL, user, password...
+    	String host = "jdbc:mysql://localhost/ilearn";
+    	String username = "root";
+    	String password = "";
+    	
+        DBCon = DBConnect.getInstance(host, username, password); // provide driverName, dbURL, user, password...
 
-        TableView<User> personTable = new TableView<>();
+        TableView<User> userTable = new TableView<User>();
         TableColumn<User, String> firstNameCol = new TableColumn<>("First Name");
-        firstNameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+        //firstNameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         TableColumn<User, String> lastNameCol = new TableColumn<>("Last Name");
-        lastNameCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        //lastNameCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         TableColumn<User, String> emailCol = new TableColumn<>("Email");
-        emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
+        //emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
 
-        personTable.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
+        userTable.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
 
-        personTable.getItems().addAll(dataAccessor.getPersonList());
+        userTable.getItems().addAll(DBCon.getUsers());
 
         BorderPane root = new BorderPane();
-        root.setCenter(personTable);
+        root.setCenter(userTable);
         Scene scene = new Scene(root, 600, 400);
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -39,8 +45,8 @@ public class UserTableApp extends Application {
 
     @Override
     public void stop() throws Exception {
-        if (dataAccessor != null) {
-            dataAccessor.shutdown();
+        if (DBCon != null) {
+            DBCon.shutdown();
         }
     }
 

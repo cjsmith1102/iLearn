@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="userCreationCss" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Label text="Create User" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Bell MT Bold" size="34.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.1806020066889632" minHeight="0.0" minWidth="0.0" BorderPane.alignment="CENTER">
+         <items>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Title">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Instructor">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="CRN Number">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Term">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Student">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="229.0" prefWidth="383.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="339.0">
+                     <children>
+                        <ComboBox id="CourseOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="342.0" promptText="Click to select course">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Programming Languages" />
+                                 <String fx:value="Object Oriented Systems" />
+                                 <String fx:value="Software Engineering" />
+                                 <String fx:value="Data Structures" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <ComboBox id="InstructorOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select instructor">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Dr. John Smith" />
+                                 <String fx:value="Dr. Yong Wei" />
+                                 <String fx:value="Tamirat Abegaz" />
+                                 <String fx:value="Minyuan Yan" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <ComboBox id="CrnOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to CRN number">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="4242" />
+                                 <String fx:value="3131" />
+                                 <String fx:value="2020" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <ComboBox id="TermOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select term">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Summer" />
+                                 <String fx:value="Fall" />
+                                 <String fx:value="Spring" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <ComboBox id="StudentOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select student">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Dr. John Smith" />
+                                 <String fx:value="Dr. Yong Wei" />
+                                 <String fx:value="Tamirat Abegaz" />
+                                 <String fx:value="Minyuan Yan" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </center>
+   <bottom>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="92.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="SubmitButtonID" layoutX="97.0" layoutY="29.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Submit">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button id="CancelButtonID" layoutX="359.0" layoutY="29.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Cancel">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>
