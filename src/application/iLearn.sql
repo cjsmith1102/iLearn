@@ -1,4 +1,5 @@
 
+CREATE DATABASE IF NOT EXISTS ilearn
 USE ilearn;
 
 DROP TABLE IF EXISTS `classes`;
