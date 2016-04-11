@@ -1,11 +1,17 @@
+package application;
+
+import application.userModel.User;
+import java.util.*;
 import java.sql.*;
+import java.util.ArrayList;
+
 
 public class DBConnect{
 
-    private Connection con = null;
-    private PreparedStatement statement = null;
-    private ResultSet result = null;
-    private static DBConnect DBCon = null;
+    private Connection con;
+    private PreparedStatement statement;
+    private ResultSet result;
+    private static DBConnect DBCon;
 
     private DBConnect(String host, String username, String password){
         try{
@@ -24,6 +30,12 @@ public class DBConnect{
         }
         return DBCon;
     }
+    
+    public void shutdown() throws SQLException {
+        if (con != null) {
+            con.close();
+        }
+    }
 
     public ResultSet select(String query){
         try{
@@ -35,27 +47,27 @@ public class DBConnect{
         }
         return result;
     }
+    
+    public List<User> getUsers(){
+        List<User> personList = new ArrayList<User>();
+    	try{
+            Statement stmnt = con.createStatement();
+            result = stmnt.executeQuery("select * from person");
+            
+            while (result.next()) {
+                String firstName = result.getString("first_name");
+                String lastName = result.getString("last_name");
+                String email = result.getString("email_address");
+                User user = new User(firstName, lastName, email);
+                personList.add(user);
+            }
+    	}catch(SQLException e){
+    		System.out.println("ERROR: " + e.getMessage());
+        }
 
-    public void truncateClasses(){
-        try{
-            statement = con.prepareStatement("TRUNCATE classes");
-            statement.execute();
-        }
-        catch(SQLException e){
-            System.out.println("ERROR: " + e.getMessage());
-        }
-    }
-
-    public void truncateUsers(){
-        try{
-            statement = con.prepareStatement("TRUNCATE users");
-            statement.execute();
-        }
-        catch(SQLException e){
-            System.out.println("ERROR: " + e.getMessage());
-        }
-    }
-
+        return personList ;
+}
+    
     public void deleteUser(String username){
         try{
             statement = con.prepareStatement("DELETE FROM users WHERE Fname LIKE ?");

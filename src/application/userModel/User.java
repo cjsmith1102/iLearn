@@ -1,4 +1,4 @@
-package iLearn;
+package application.userModel;
 /**
  * Created by cjsmith1102 on 4/5/2016.
  */
@@ -6,7 +6,7 @@ package iLearn;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Person {
+public class User {
     private final StringProperty firstName = new SimpleStringProperty(this, "firstName");
     public StringProperty firstNameProperty() {
         return firstName ;
@@ -40,9 +40,9 @@ public class Person {
         emailProperty().set(email);
     }
 
-    public Person() {}
+    public User() {}
 
-    public Person(String firstName, String lastName, String email) {
+    public User(String firstName, String lastName, String email) {
         setFirstName(firstName);
         setLastName(lastName);
         setEmail(email);

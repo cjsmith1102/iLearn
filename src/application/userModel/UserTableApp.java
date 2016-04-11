@@ -1,4 +1,4 @@
-package iLearn;
+package application.userModel;
 
 /**
  * Created by cjsmith1102 on 4/5/2016.
@@ -11,19 +11,19 @@ import javafx.scene.layout.BorderPane ;
 import javafx.scene.Scene ;
 import javafx.stage.Stage ;
 
-public class PersonTableApp extends Application {
-    private PersonDataAccessor dataAccessor ;
+public class UserTableApp extends Application {
+    private UserDataAccessor dataAccessor ;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        dataAccessor = new PersonDataAccessor(driverName, dbURL, user, password); // provide driverName, dbURL, user, password...
+        dataAccessor = new UserDataAccessor(driverName, dbURL, user, password); // provide driverName, dbURL, user, password...
 
-        TableView<Person> personTable = new TableView<>();
-        TableColumn<Person, String> firstNameCol = new TableColumn<>("First Name");
+        TableView<User> personTable = new TableView<>();
+        TableColumn<User, String> firstNameCol = new TableColumn<>("First Name");
         firstNameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-        TableColumn<Person, String> lastNameCol = new TableColumn<>("Last Name");
+        TableColumn<User, String> lastNameCol = new TableColumn<>("Last Name");
         lastNameCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));
-        TableColumn<Person, String> emailCol = new TableColumn<>("Email");
+        TableColumn<User, String> emailCol = new TableColumn<>("Email");
         emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
 
         personTable.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
