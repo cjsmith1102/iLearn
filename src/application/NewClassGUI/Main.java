@@ -22,12 +22,7 @@ public class Main extends Application {
         primaryStage.show();
 
     //    connect.getData();
-
-
-
-}
-
-
+    }
     public static void main(String[] args) {
         launch(args);
     }

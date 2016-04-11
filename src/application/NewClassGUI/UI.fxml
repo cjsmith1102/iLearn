@@ -7,7 +7,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.collections.*?>
 
-<BorderPane id="BorderPaneID" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="600.0" stylesheets="@style.CSS" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="BorderPaneID" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="600.0" stylesheets="@style.CSS" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NewClassGUI.Controller">
    <center>
       <SplitPane dividerPositions="0.24390243902439024" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="449.0" BorderPane.alignment="CENTER">
          <items>
@@ -16,7 +16,7 @@
                   <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="223.0" prefWidth="110.0">
                      <children>
 
-                        <Label id="CourseTitleLabelID" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Title">
+                        <Label fx:id="CourseTitleLabel" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Title">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -25,7 +25,7 @@
                            </VBox.margin>
                         </Label>
 
-                        <Label id="InstructorTitleID" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Instructor">
+                        <Label fx:id="InstructorTitle" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Instructor">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -34,7 +34,7 @@
                            </VBox.margin>
                         </Label>
 
-                        <Label id="LocationLabelID" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Location">
+                        <Label fx:id="LocationLabel" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Location">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -43,7 +43,7 @@
                            </VBox.margin>
                         </Label>
 
-                        <Label id="TermLabelID" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Term">
+                        <Label fx:id="TermLabel" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Term">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -52,7 +52,7 @@
                            </VBox.margin>
                         </Label>
 
-                        <Label id="StartTimeLabelID" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Start">
+                        <Label fx:id="StartTimeLabel" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="Start">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -61,7 +61,7 @@
                            </VBox.margin>
                         </Label>
 
-                        <Label id="EndTimeLabelID" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="End">
+                        <Label fx:id="EndTimeLabel" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="107.0" text="End">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -79,7 +79,7 @@
                   <VBox layoutX="-1.0" prefHeight="223.0" prefWidth="339.0">
                      <children>
 
-                        <ComboBox id="CourseOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="457.0" promptText="Click to select course">
+                        <ComboBox fx:id="CourseOption" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="457.0" promptText="Click to select course">
                         <items>
                            <FXCollections fx:factory="observableArrayList">
                               <String fx:value="Programming Languages" />
@@ -92,8 +92,7 @@
                               <Insets />
                            </VBox.margin>
                      </ComboBox>
-
-                        <ComboBox id="InstructorOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select instructor">
+                        <ComboBox fx:id="InstructorOption" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select instructor">
                            <items>
                               <FXCollections fx:factory="observableArrayList">
                                  <String fx:value="Dr. John Smith" />
@@ -108,7 +107,7 @@
                         </ComboBox>
 
 
-                        <ComboBox id="LocationOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select location">
+                        <ComboBox fx:id="LocationOption" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select location">
                            <items>
                               <FXCollections fx:factory="observableArrayList">
                                  <String fx:value="Newton Oakes" />
@@ -122,7 +121,7 @@
                            </VBox.margin>
                         </ComboBox>
 
-                        <ComboBox id="TermOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select term">
+                        <ComboBox fx:id="TermOption" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select term">
                            <items>
                               <FXCollections fx:factory="observableArrayList">
                                  <String fx:value="Summer" />
@@ -135,7 +134,7 @@
                            </VBox.margin>
                         </ComboBox>
 
-                        <ComboBox id="StartTimeOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select start time">
+                        <ComboBox fx:id="StartTimeOption" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select start time">
                         <items>
                            <FXCollections fx:factory="observableArrayList">
                               <String fx:value="8:00" />
@@ -148,7 +147,7 @@
                         </VBox.margin>
                      </ComboBox>
 
-                        <ComboBox id="EndTimeOptionID" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select start time">
+                        <ComboBox fx:id="EndTimeOption" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="453.0" promptText="Click to select start time">
                            <items>
                               <FXCollections fx:factory="observableArrayList">
                                  <String fx:value="9:15" />
@@ -172,7 +171,7 @@
       </SplitPane>
    </center>
    <top>
-      <Label id="TitleLabelID" alignment="CENTER" prefHeight="57.0" prefWidth="607.0" text="Class Creation" BorderPane.alignment="CENTER">
+      <Label fx:id="TitleLabel" alignment="CENTER" prefHeight="57.0" prefWidth="607.0" text="Class Creation" BorderPane.alignment="CENTER">
          <font>
             <Font name="Bell MT Bold" size="34.0" />
          </font>
@@ -181,12 +180,12 @@
    <bottom>
       <AnchorPane prefHeight="93.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="SubmitButtonID" layoutX="118.0" layoutY="23.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Submit" AnchorPane.topAnchor="23.0">
+            <Button fx:id="SubmitButton" onAction="#onSubmit" layoutX="118.0" layoutY="23.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Submit" AnchorPane.topAnchor="23.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button id="CancelButtonID" layoutX="349.0" layoutY="23.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Cancel" AnchorPane.topAnchor="23.0">
+            <Button fx:id="CancelButtonI" layoutX="349.0" layoutY="23.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Cancel" AnchorPane.topAnchor="23.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -199,11 +198,11 @@
          <children>
             <VBox alignment="CENTER_LEFT" layoutX="24.0" layoutY="22.0" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
                <children>
-                  <CheckBox id="MondayID" alignment="CENTER" mnemonicParsing="false" text="Monday" />
-                  <CheckBox id="TuesdayID" alignment="CENTER" mnemonicParsing="false" text="Tuesday" />
-                  <CheckBox id="WednesdayID" alignment="CENTER" mnemonicParsing="false" text="Wednesday" />
-                  <CheckBox id="ThursdayID" mnemonicParsing="false" text="Thursday" />
-                  <CheckBox id="FridayID" mnemonicParsing="false" text="Friday" />
+                  <CheckBox fx:id="Monday" alignment="CENTER" mnemonicParsing="false" text="Monday" />
+                  <CheckBox fx:id="Tuesday" alignment="CENTER" mnemonicParsing="false" text="Tuesday" />
+                  <CheckBox fx:id="Wednesday" alignment="CENTER" mnemonicParsing="false" text="Wednesday" />
+                  <CheckBox fx:id="Thursday" mnemonicParsing="false" text="Thursday" />
+                  <CheckBox fx:id="Friday" mnemonicParsing="false" text="Friday" />
                </children>
                <padding>
                   <Insets bottom="25.0" />

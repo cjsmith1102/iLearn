@@ -17,7 +17,7 @@ public class DBConnect{
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(host, username, password);
-            // System.out.println("\n======================\nConnected Successfully\n======================\n");
+            System.out.println("\n======================\nConnected Successfully\n======================\n");
         }
         catch(Exception e){
             System.out.println("ERROR: " + e.getMessage());
@@ -91,14 +91,17 @@ public class DBConnect{
         }
     }
 
-    public boolean insertClass(String title, String location, String instructor, int capacity, String term){
+    public boolean insertClass(String title, String location, String instructor, int capacity, String start, String end, String term){
         try{
-            statement = con.prepareStatement("INSERT INTO classes(Title, Location, Instructor, Capacity, Term) VALUES(?, ?, ?, ?, ?)");
+            statement = con.prepareStatement("INSERT INTO classes(Title, Location, Instructor, Capacity, StartTime, EndTime, Term) VALUES(?, ?, ?, ?, ?, ?, ?)");
             statement.setString(1, title);
             statement.setString(2, location);
             statement.setString(3, instructor);
             statement.setInt(4, capacity);
-            statement.setString(5, term);
+            statement.setString(5, start);
+            statement.setString(6, end);
+            statement.setString(7, term);
+
             statement.execute();
         }
         catch(SQLException e){
