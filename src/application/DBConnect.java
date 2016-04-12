@@ -1,7 +1,5 @@
 package application;
 
-import application.userModel.User;
-import java.util.*;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -17,7 +15,7 @@ public class DBConnect{
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(host, username, password);
-            System.out.println("\n======================\nConnected Successfully\n======================\n");
+            //System.out.println("\n======================\nConnected Successfully\n======================\n");
         }
         catch(Exception e){
             System.out.println("ERROR: " + e.getMessage());
@@ -30,11 +28,17 @@ public class DBConnect{
         }
         return DBCon;
     }
-    
-    public void shutdown() throws SQLException {
-        if (con != null) {
-            con.close();
+
+    public void shutdown(){
+    	try{
+            if (con != null) {
+                con.close();
+            }
+    	}
+        catch(SQLException e){
+            System.out.println("ERROR: " + e.getMessage());
         }
+
     }
 
     public ResultSet select(String query){
@@ -47,27 +51,7 @@ public class DBConnect{
         }
         return result;
     }
-    
-    public List<User> getUsers(){
-        List<User> personList = new ArrayList<User>();
-    	try{
-            Statement stmnt = con.createStatement();
-            result = stmnt.executeQuery("select * from person");
-            
-            while (result.next()) {
-                String firstName = result.getString("first_name");
-                String lastName = result.getString("last_name");
-                String email = result.getString("email_address");
-                User user = new User(firstName, lastName, email);
-                personList.add(user);
-            }
-    	}catch(SQLException e){
-    		System.out.println("ERROR: " + e.getMessage());
-        }
 
-        return personList ;
-}
-    
     public void deleteUser(String username){
         try{
             statement = con.prepareStatement("DELETE FROM users WHERE Fname LIKE ?");
@@ -110,14 +94,14 @@ public class DBConnect{
         return true;
     }
 
-    public boolean insertUser(String firstName, String lastName, String address, String email, int phoneNumber, String password, int superuser){
+    public boolean insertUser(String firstName, String lastName, String address, String email, String phoneNumber, String password, int superuser){
         try{
             statement = con.prepareStatement("INSERT INTO users(Fname, Lname, Address, Email, Phone, Password, Super) VALUES(?, ?, ?, ?, ?, ?, ?)");
             statement.setString(1, firstName);
             statement.setString(2, lastName);
             statement.setString(3, address);
             statement.setString(4, email);
-            statement.setInt(5, phoneNumber);
+            statement.setString(5, phoneNumber);
             statement.setString(6, password);
             statement.setInt(7, superuser);
             statement.execute();

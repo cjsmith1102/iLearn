@@ -1,5 +1,6 @@
-package application.NewClassGUI;
+package application.ClassModel;
 
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 
@@ -13,7 +14,10 @@ public class Controller {
 	private String host = "jdbc:mysql://localhost/ilearn";
 	private String username = "root";
 	private String password = "";
+	
+	@FXML
 	public Button SubmitButton;
+	public Button CancelButton;
 	public ComboBox<String> CourseOption;
 	public ComboBox<String> InstructorOption;
 	public ComboBox<String> LocationOption;
@@ -23,7 +27,6 @@ public class Controller {
 
 	
 	public void onSubmit(){
-		SubmitButton.setText("HELLO WORLD");
 		con = DBConnect.getInstance(host, username, password);
 		String title = CourseOption.getValue();
 		String instructor = InstructorOption.getValue();
@@ -32,12 +35,10 @@ public class Controller {
 		String start = StartTimeOption.getValue();
 		String end = EndTimeOption.getValue();
 		con.insertClass(title, location, instructor, 0, start, end, term);
-		System.out.println("Course: " + title);
-		System.out.println("Instructor: " + instructor);
-		System.out.println("Location: " + location);
-		System.out.println("Term: " + term);
-		System.out.println("Start Time: " + start);
-		System.out.println("End Time: " + end);
-
+		System.out.println("SUCCESS");
+	}
+	
+	public void onCancel(){
+		System.exit(0);
 	}
 }

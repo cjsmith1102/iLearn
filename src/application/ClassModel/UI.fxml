@@ -7,7 +7,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.collections.*?>
 
-<BorderPane fx:id="BorderPaneID" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="600.0" stylesheets="@style.CSS" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NewClassGUI.Controller">
+<BorderPane fx:id="BorderPaneID" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="600.0" stylesheets="@style.CSS" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ClassModel.Controller">
    <center>
       <SplitPane dividerPositions="0.24390243902439024" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="449.0" BorderPane.alignment="CENTER">
          <items>
@@ -185,7 +185,7 @@
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="CancelButtonI" layoutX="349.0" layoutY="23.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Cancel" AnchorPane.topAnchor="23.0">
+            <Button fx:id="CancelButton" onAction="#onCancel" layoutX="349.0" layoutY="23.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Cancel" AnchorPane.topAnchor="23.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -193,25 +193,4 @@
          </children>
       </AnchorPane>
    </bottom>
-   <right>
-      <AnchorPane prefHeight="212.0" prefWidth="147.0" BorderPane.alignment="CENTER">
-         <children>
-            <VBox alignment="CENTER_LEFT" layoutX="24.0" layoutY="22.0" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
-               <children>
-                  <CheckBox fx:id="Monday" alignment="CENTER" mnemonicParsing="false" text="Monday" />
-                  <CheckBox fx:id="Tuesday" alignment="CENTER" mnemonicParsing="false" text="Tuesday" />
-                  <CheckBox fx:id="Wednesday" alignment="CENTER" mnemonicParsing="false" text="Wednesday" />
-                  <CheckBox fx:id="Thursday" mnemonicParsing="false" text="Thursday" />
-                  <CheckBox fx:id="Friday" mnemonicParsing="false" text="Friday" />
-               </children>
-               <padding>
-                  <Insets bottom="25.0" />
-               </padding>
-            </VBox>
-         </children>
-         <padding>
-            <Insets bottom="50.0" />
-         </padding>
-      </AnchorPane>
-   </right>
 </BorderPane>

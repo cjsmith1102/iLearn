@@ -24,9 +24,9 @@ CREATE TABLE `users` (
   `Email` varchar(255) NOT NULL,
   `Phone` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
-  `Super` tinyint(1) NOT NULL,
+  `Super` tinyint(1) DEFAULT 1 NOT NULL,
   PRIMARY KEY (`ID`)
 );
 
 INSERT INTO `users` (`Fname`, `Lname`, `Address`, `Email`, `Phone`, `Password`, `Super`) VALUES
-('Admin', 'Admin', "Place", 'admin@elearning.edu', "555-555-5555", '123456', 1)
+('Admin', 'Admin', "Place", 'admin@elearning.edu', "555-555-5555", '123456', 0)

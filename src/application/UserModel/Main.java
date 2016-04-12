@@ -1,4 +1,4 @@
-package application.userModelAbe;
+package application.UserModel;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -13,10 +13,9 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			primaryStage.setTitle("iLearn");
-			Parent root = FXMLLoader.load(getClass().getResource("NewUser.fxml"));
+			primaryStage.setTitle("Add New User");
+			Parent root = FXMLLoader.load(getClass().getResource("UI.fxml"));
 			Scene scene = new Scene(root,600,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
